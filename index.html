@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce Select</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <meta name="description"
+    content="Un proyecto de comercio electrónico (E-commerce) completo que muestra mis habilidades en desarrollo web, incluyendo la gestión de productos, carrito de compras, proceso de pago simulado y más.">
+  <link rel="canonical" href="https://CarlosJairo.github.io/E-commerce-select">
+  <link rel="favicon" href="https://CarlosJairo.github.io/E-commerce-select/assets/images/logo.png">
+  <link rel="apple-touch-icon" href="https://CarlosJairo.github.io/E-commerce-select/assets/images/logo.png">
+  <meta name="theme-color" content="#0c887e">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:type" content="website">
+  <meta property="og:title" name="twitter:title" content="E-Commerce Select">
+  <meta property="og:description" name="twitter:description"
+    content="Un proyecto de comercio electrónico (E-commerce) completo que muestra mis habilidades en desarrollo web, incluyendo la gestión de productos, carrito de compras, proceso de pago simulado y más.">
+  <meta property="og:image" name="twitter:image"
+    content="https://CarlosJairo.github.io/E-commerce-select/assets/images/logo.png">
+  <meta property="og:url" name="twitter:url"
+    content="https://CarlosJairo.github.io/E-commerce-select/assets/images/logo.png">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header flex">
+    <h1 class="go-home-btn">Select</h1>
+
+    <!-- Navigation menu with links and buttons -->
+    <nav class="menu flex">
+      <div class="go-section-btns">
+        <input type="button" class="btn go-home-btn" value="Home" />
+        <input type="button" class="btn go-shop-btn" value="Shop" />
+        <input type="button" class="btn go-contact-btn" value="Contact" />
+        <input type="button" class="btn go-about-btn" value="About" />
+      </div>
+
+      <!-- Hamburger menu button -->
+      <a class="hamburger-btn flex">
+        <i id="hamburger" class="bi bi-list btn flex"></i>
+        <i class="bi bi-x-lg close-hamburger btn"></i>
+      </a>
+
+      <!-- Shopping cart button -->
+      <button class="btn cart-btn show-cart flex">
+        <div class="red-point"></div>
+        <i class="bi bi-cart-dash-fill show-cart"></i>
+      </button>
+    </nav>
+
+    <!--  Cart section-->
+    <div class="cart-div">
+      <p class="cart-title flex">Cart <i class="bi bi-x-lg close-cart show-cart"></i></p>
+      <div class="products-cart">
+        <p>There are no products in the cart</p>
+      </div>
+      <button class="cart-chekount">Checkout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home page -->
+    <section class="home alternar no-active flex">
+      <p class="p-home-1">Trade-in Offer</p>
+      <h2 class="subtitle-1">Amazing Discount Deals</h2>
+      <h2 class="subtitle-2">For Every Product</h2>
+      <p class="p-home-2">Discover our special deals offering great value</p>
+      <button class="shop-now-btn go-shop-btn">Shop now</button>
+    </section>
+
+    <!-- Home page -->
+    <section class="shop alternar no-active">
+
+      <!-- Search Container -->
+      <article class="search-container flex">
+        <div class="categories-container">
+          <button class="btn go-shop-btn all">All</button>
+          <button class="btn go-shop-btn women" data-url="women">Women's</button>
+          <button class="btn go-shop-btn men" data-url="men">Men's</button>
+        </div>
+        <label class="search-label flex">
+          <input class="search-input" type="text" placeholder="Search..." />
+          <i class="bi bi-search"></i>
+        </label>
+      </article>
+
+      <!-- Products -->
+      <article class="products">
+      </article>
+
+      <!-- Template to add a single product  -->
+      <template class="template">
+        <div class="product-info flex">
+          <div class="img-product-container flex">
+            <img alt="Product image">
+          </div>
+          <div class="details flex">
+            <h3 class="title"></h3>
+            <P class="price">$<span class="priice"></span></P>
+            <div class="rate-car-container flex">
+              <div class="stars-outer">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="stars-inner" data-rate="">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <p><strong>Category: </strong> <span class="category"></span></p>
+            <h4>Description</h4>
+            <p class="description"></p>
+            <div class="quantity-container flex">
+              <p class="quantity">Quantity</p>
+              <input type="number" value="1" class="quantity-number" min="1">
+              <button class="add-cart-product" data-id="" data-title="" data-img="" data-price="">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact alternar no-active flex">
+      <div class="banner flex">
+        <h3>#Let's_Talk</h3>
+        <p>we love to hear you</p>
+      </div>
+      <h2>Contact</h2>
+      <form class="contact-form">
+        <legend>Send us your comments</legend>
+        <input type="text" name="nombre" placeholder="Write your name..."
+          title="The name only accepts letters and blank spaces" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required />
+
+        <input type="email" name="email" placeholder="Write your email..." title="Wrong email"
+          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9\-]+(\.[a-z0-9\-]+)*(\.[a-z]{2,15})$" required />
+
+        <input type="text" name="subject" placeholder="Subject..." title="Subject is required" required />
+
+        <textarea name="comments" cols="50" rows="5" required data-pattern="^.{1,255}$"
+          title="Your comment must not exceed 255 characters"></textarea>
+
+        <div class="contact-form-loader none">
+          <img src="assets/svg/three-dots.svg" alt="cargando..." class="contact-form-loader" />
+        </div>
+
+        <input type="submit" value="Enviar" />
+
+        <div class="contact-form-response none">
+          <p>Los datos han sido enviados</p>
+        </div>
+      </form>
+    </section>
+
+    <!-- About section -->
+    <section class="about alternar no-active">
+      <div class="banner flex">
+        <h3>#KnowUs</h3>
+        <p>know about us</p>
+      </div>
+      <h2 class="who-we-are title">Who We Are? </h2>
+      <p class="who-we-are p">At Select, we are more than just a retailer – we are your destination for quality and
+        style. As a brand that
+        understands the evolving needs of our customers, we've curated a unique shopping experience that blends
+        fashion
+        with technology. Established with a passion for delivering the latest trends, our team of experts handpick a
+        diverse range of clothing and a selection of cutting-edge electronics to cater to your lifestyle.
+        <br>
+        At Select, we believe in the power of choice – the ability to select the best for yourself. Our commitment to
+        quality, value, and customer satisfaction drives us to constantly evolve, ensuring that every experience with
+        us
+        is a reflection of your unique preferences.
+        <br>
+        Welcome to Select – a place where fashion meets technology, and where you have the power to choose and define
+        your own narrative.
+      </p>
+    </section>
+
+    <!-- Section for card payment -->
+    <section class="card-payment-container alternar no-active">
+      <h2>Card payment</h2>
+      <form id="payment-form">
+        <p>$<b><span class="price-to-pay">123</span></b> in products from <strong>SELECT</strong></p>
+        <p class="alert">This form is a demo. Please do not enter sensitive or real bank card information.</p>
+        <input type="text" placeholder="Name on the card" value="Someone's name" required>
+
+        <input type="text" placeholder="Card number" pattern="\d{16}" value="1122334455667788" required>
+
+        <div class="date-card flex">
+          <input type="text" placeholder="Expiration date (MM/AA)" pattern="(0[1-9]|1[0-2])/\d{2}" value="10/15"
+            required>
+
+          <input type="text" placeholder="CVV" pattern="\d{3}" value="000" required>
+        </div>
+
+        <select required>
+          <option value="visa">Visa</option>
+          <option value="mastercard">Mastercard</option>
+        </select>
+        <div class="card-loader none">
+          <img src="assets/svg/three-dots.svg" alt="cargando..." class="contact-form-loader loder" />
+        </div>
+        <input type="button" value="Make payment" class="make-payment">
+
+        <p class="thanks-msg none">Thank You for Your Purchase <br> you will be redirected to the main page</p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer section -->
+  <footer class="footer flex">
+    <section class="info-container">
+      <img src="assets/images/logo.png" alt="Logo Select" class="logo" />
+      <h3>Contact</h3>
+      <p>
+        <strong>Adress: </strong>Street 11 No. 34 - 78 , Av. Panamericana,
+        Pasto, Colombia
+      </p>
+      <p><strong>Phone: </strong>+57 (20) 456-7890</p>
+      <p><strong>Hours: </strong>Monday - Friday: 7:00 AM - 5:00 PM</p>
+      <br />
+
+      <h3>Follow US</h3>
+      <div class="icons-social-media">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.twitter.com/" target="_blank" rel="noopener"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
+      </div>
+    </section>
+
+    <section class="about-footer">
+      <h3>About</h3>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Terms & Conditions</a>
+    </section>
+
+    <section class="install-app">
+      <h3>Install App</h3>
+      <p>From App Store or Google Play</p>
+      <a href="https://www.apple.com/co/app-store/" target="_blank" rel="noopener">
+        <img class="store-" src="./assets/images/appstore.png" alt="go App Store" />
+      </a>
+      <a href="https://play.google.com/store/games?hl=es_CO&gl=US&pli=1" target="_blank" rel="noopener">
+        <img class="store-" src="./assets/images/googleplay.png" alt="go Google play" />
+      </a>
+      <p>Secured Payment Gateways</p>
+      <img class="pay-card" src="./assets/images/visa.png" alt="Visa" />
+      <img class="pay-card" src="./assets/images/pp.png" alt="PayPal" />
+      <img class="pay-card" src="./assets/images/mc.png" alt="Master Card" />
+    </section>
+  </footer>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
