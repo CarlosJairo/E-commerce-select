@@ -1,6 +1,5 @@
 # E-commerce-select
 
 Un proyecto de comercio electrónico (E-commerce) completo que muestra mis habilidades en desarrollo web, incluyendo la gestión de productos, carrito de compras, proceso de pago simulado y más.
-
-Ver proyecto: 
-    https://carlosjairo.github.io/E-commerce-select/
+  
+[Explorar proyecto](https://carlosjairo.github.io/E-commerce-select/)
